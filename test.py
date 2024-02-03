@@ -16,6 +16,7 @@ client = tweepy.Client(
 )
 
 tweet_text = """【 Daily Report】
+test tweet
 ${os.getenv("GITHUB_REPOSITORY")}"""
 
 client.create_tweet(text=tweet_text)
