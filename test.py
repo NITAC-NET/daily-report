@@ -25,6 +25,7 @@ client = tweepy.Client(
 )
 
 tweet_text = """【 Daily Report】
+test
 $("GITHUB_REPOSITORY")"""
 
 print(BEARER_TOKEN)
