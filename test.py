@@ -20,4 +20,5 @@ client = tweepy.Client(
 tweet_text = """【 Daily Report】
 ${os.getenv("GITHUB_REPOSITORY")}"""
 
+print(BEARER_TOKEN)
 client.create_tweet(text=tweet_text)
