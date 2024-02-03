@@ -3,25 +3,17 @@ import datetime
 import tweepy
 import os
 
-def get_pushed_files():
-    event_path = os.getenv("GITHUB_EVENT_PATH")
+API_KEY = os.getenv("TWITTER_API_KEY")
+API_SECRET = os.getenv("TWITTER_API_SECRET_KEY")
+ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
+ACCESS_TOKEN_SECRET = os.getenv("TWITTER_ACCESS_TOKEN")
 
-    if event_path and os.path.exists(event_path):
-        with open(event_path, "r") as file:
-            data = file.read()
+client = tweepy.Client(
+    consumer_key=API_KEY,
+    consumer_secret=API_SECRET,
+    access_token=ACCESS_TOKEN,
+    access_token_secret=ACCESS_TOKEN_SECRET,
+)
 
-        # GitHub Actionsのpushイベントから変更されたファイルを取得
-        if data:
-            changes = (
-                eval(data).get("commits")[0].get("added")
-                + eval(data).get("commits")[0].get("modified")
-                + eval(data).get("commits")[0].get("removed")
-            )
-
-            print("Changed files:")
-            for file in changes:
-                print(file)
-
-
-if __name__ == "__main__":
-    get_pushed_files()
+tweet = """【 Daily Report】
+${os.getenv("GITHUB_REPOSITORY")}"""
