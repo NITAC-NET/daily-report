@@ -22,7 +22,7 @@ client = tweepy.Client(
     consumer_secret=API_SECRET,
     access_token=ACCESS_TOKEN,
     access_token_secret=ACCESS_TOKEN_SECRET,
-    wait_on_rate_limit=False
+    wait_on_rate_limit=False,
 )
 
 tweet_text = """【 Daily Report】
@@ -30,4 +30,4 @@ test
 $("GITHUB_REPOSITORY ")"""
 
 print(BEARER_TOKEN)
-client.create_tweet(text=tweet_text)
+client.create_tweet(text=tweet_text,user_auth=False)
