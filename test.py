@@ -4,11 +4,11 @@ import tweepy
 import os
 
 
-API_KEY = os.environ.get("TWITTER_API_KEY")
-API_SECRET = os.environ.get("TWITTER_API_SECRET_KEY")
-ACCESS_TOKEN = os.environ.get("TWITTER_ACCESS_TOKEN")
-ACCESS_TOKEN_SECRET = os.environ.get("TWITTER_ACCESS_TOKEN")
-BEARER_TOKEN = os.environ.get("BEARER_TOKEN")
+API_KEY = os.environ.get("TWITTER_API_KEY ")
+API_SECRET = os.environ.get("TWITTER_API_SECRET_KEY ")
+ACCESS_TOKEN = os.environ.get("TWITTER_ACCESS_TOKEN ")
+ACCESS_TOKEN_SECRET = os.environ.get("TWITTER_ACCESS_TOKEN ")
+BEARER_TOKEN = os.environ.get("BEARER_TOKEN ")
 """
 API_KEY = 'bYlxxW3ip3FnBL48hoK6QqhXD'
 API_SECRET = "KQUkPmNGsaVphw8fFICxkiie6CjbmgE7sJSS9yCkd3KLQK3hA5"
@@ -22,11 +22,12 @@ client = tweepy.Client(
     consumer_secret=API_SECRET,
     access_token=ACCESS_TOKEN,
     access_token_secret=ACCESS_TOKEN_SECRET,
+    wait_on_rate_limit=False
 )
 
 tweet_text = """【 Daily Report】
 test
-$("GITHUB_REPOSITORY")"""
+$("GITHUB_REPOSITORY ")"""
 
 print(BEARER_TOKEN)
 client.create_tweet(text=tweet_text)
