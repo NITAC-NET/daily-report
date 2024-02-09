@@ -4,7 +4,7 @@ import tweepy
 import os
 
 
-API_KEY = os.environ.get("TWITTER_API_KEY ")
+API_KEY = os.environ.get('TWITTER_API_KEY ')
 API_SECRET = os.environ.get("TWITTER_API_SECRET_KEY ")
 ACCESS_TOKEN = os.environ.get("TWITTER_ACCESS_TOKEN ")
 ACCESS_TOKEN_SECRET = os.environ.get("TWITTER_ACCESS_TOKEN ")
@@ -30,4 +30,4 @@ test
 $("GITHUB_REPOSITORY ")"""
 
 print(BEARER_TOKEN)
-client.create_tweet(text=tweet_text,user_auth=False)
+client.create_tweet(text=tweet_text)
